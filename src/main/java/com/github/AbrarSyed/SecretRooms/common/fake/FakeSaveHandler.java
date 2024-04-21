@@ -26,7 +26,7 @@ public class FakeSaveHandler implements ISaveHandler
 	}
 
 	@Override
-	public void checkSessionLock() throws MinecraftException
+	public void checkSessionLock()
 	{
 		// nothing.
 	}

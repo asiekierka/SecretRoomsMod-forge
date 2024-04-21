@@ -1,6 +1,7 @@
 package com.github.AbrarSyed.SecretRooms.common;
 
 import net.minecraft.command.CommandBase;
+import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.network.packet.Packet250CustomPayload;
 import cpw.mods.fml.common.network.PacketDispatcher;
@@ -28,5 +29,10 @@ public class CommandShow extends CommandBase
 		packet.length = 0;
 
 		PacketDispatcher.sendPacketToPlayer(packet, (Player) CommandBase.getCommandSenderAsPlayer(var1));
+	}
+
+	@Override
+	public int compareTo(Object o) {
+		return getCommandName().compareTo(((ICommand) o).getCommandName());
 	}
 }
